@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MarketWebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:MarketWebAPI.Features.Price.PriceController.GetPrices">
+            <summary>
+            Returns all prices.
+            </summary>
+            <returns>PriceOutput object</returns>
+        </member>
+        <member name="M:MarketWebAPI.Features.Price.PriceController.InsertPrice(System.Collections.ObjectModel.Collection{MarketWebAPI.Features.Price.PriceInput})">
+            <summary>
+            Inserts all prices.
+            </summary>
+            <returns>InsertedID</returns>
+        </member>
+    </members>
+</doc>

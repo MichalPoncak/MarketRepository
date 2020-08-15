@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MarketWebPortal.Data\MarketWebPortal.Data.csproj" />
+    <ProjectReference Include="..\MarketWebPortal.Model\MarketWebPortal.Model.csproj" />
+    <ProjectReference Include="..\MarketWebPortal.ViewModels\MarketWebPortal.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,13 @@
+﻿@model MarketWebPortal.ViewModels.PriceViewModel
+
+@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        @Html.LabelFor(x => x.FormFile)
+        @Html.TextBoxFor(x => x.FormFile, new { type = "file" })
+        @Html.ValidationMessageFor(x => x.FormFile)
+    </div>
+    <button type="submit">Upload</button>
+}
+
+<p>@Html.Raw(Model.Response)</p>
