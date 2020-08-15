@@ -1,0 +1,1 @@
+Web API Testing folder contains a file with sample HTTP requests to functional testing of web APIs.

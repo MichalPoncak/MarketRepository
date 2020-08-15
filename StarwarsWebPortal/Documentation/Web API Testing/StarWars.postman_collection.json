@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "3fe115b9-ad21-4051-9ed7-2151ba668736",
+		"name": "StarWars",
+		"description": "https://swapi.dev/",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetStarships",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://swapi.dev/api/starships?page=1",
+					"protocol": "http",
+					"host": [
+						"swapi",
+						"dev"
+					],
+					"path": [
+						"api",
+						"starships"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Gets all starships from a public dummy web API"
+			},
+			"response": []
+		},
+		{
+			"name": "GetStarship",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://swapi.dev/api/starships/9/",
+					"protocol": "http",
+					"host": [
+						"swapi",
+						"dev"
+					],
+					"path": [
+						"api",
+						"starships",
+						"9",
+						""
+					]
+				},
+				"description": "Gets all starships from a public dummy web API"
+			},
+			"response": []
+		},
+		{
+			"name": "GetPeople",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://swapi.dev/api/people",
+					"protocol": "http",
+					"host": [
+						"swapi",
+						"dev"
+					],
+					"path": [
+						"api",
+						"people"
+					]
+				},
+				"description": "Gets all starships from a public dummy web API"
+			},
+			"response": []
+		},
+		{
+			"name": "GetPerson",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://swapi.dev/api/people/1/",
+					"protocol": "http",
+					"host": [
+						"swapi",
+						"dev"
+					],
+					"path": [
+						"api",
+						"people",
+						"1",
+						""
+					]
+				},
+				"description": "Gets all starships from a public dummy web API"
+			},
+			"response": []
+		},
+		{
+			"name": "GetPlanets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://swapi.dev/api/planets",
+					"protocol": "http",
+					"host": [
+						"swapi",
+						"dev"
+					],
+					"path": [
+						"api",
+						"planets"
+					]
+				},
+				"description": "Gets all starships from a public dummy web API"
+			},
+			"response": []
+		},
+		{
+			"name": "GetPlanet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://swapi.dev/api/planets/3/",
+					"protocol": "http",
+					"host": [
+						"swapi",
+						"dev"
+					],
+					"path": [
+						"api",
+						"planets",
+						"3",
+						""
+					]
+				},
+				"description": "Gets all starships from a public dummy web API"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

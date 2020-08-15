@@ -1,0 +1,39 @@
+﻿
+    <div class="text-center">
+        <div class="container">
+            <p>The following page gets all startships and their required number of resupplies for a given distance.</p>
+            <span class="input-group-addon">Distance:</span>
+            <input type="number" id="txtDistance" min="0" data-bind="value:replyNumber" />
+        </div>
+        
+        <button id="btnGetStarships" type="button" class="btn btn-primary btn-lg btn-block mt-lg-2 mb-lg-2 mt-sm-4 mb-sm-4" data-url='@Url.Action("GetStarships", "Home")'>Calculate number of resupplies</button>
+
+        <span id="statusMessage" class="textOutput"></span>
+        <div id="starshipOutputGrid" class="table-responsive"></div>
+
+        <nav id="starshipPagination" class="text-center centerAlign">
+            <ul class="pagination">
+                <li id="btnPreviousPage" class="page-item" data-url='@Url.Action("GetStarships", "Home")'>
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                @*<li class="page-item"><a id="hdnPreviousPageNumber" class="page-link" href="#">1</a></li>*@
+                <li class="page-item"><span id="lblCurrentPageNumber" class="page-link">1</span></li>
+                @*<li class="page-item"><a id="hdnNextPageNumber" class="page-link" href="#">3</a></li>*@
+                <li id="btnNextPage" class="page-item" data-url='@Url.Action("GetStarships", "Home")'>
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        @Html.Hidden("hdnPreviousPageNumber", "0")
+        @Html.Hidden("hdnCurrentPageNumber", "1")
+        @Html.Hidden("hdnNextPageNumber", "2")
+    </div>
+
+    <script type="text/javascript" src="~/js/Starship.js"></script>

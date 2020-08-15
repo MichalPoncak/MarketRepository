@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StarwarsWebPortal.Data\StarwarsWebPortal.Data.csproj" />
+    <ProjectReference Include="..\StarwarsWebPortal.Models\StarwarsWebPortal.Models.csproj" />
+  </ItemGroup>
+
+</Project>
