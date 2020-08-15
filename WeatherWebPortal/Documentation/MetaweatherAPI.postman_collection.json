@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "e4574349-d5b7-4d1c-92a6-1b945d71edce",
+		"name": "MetaweatherAPI",
+		"description": "Web API source https://www.metaweather.com/api/\r\n\r\nwoeid is a geographical ID for anything on Earth. It can be found by using this\r\nhttps://codebeautify.org/jsonviewer/f83352\r\n\r\nICON source EX: https://www.metaweather.com/static/img/weather/s.svg",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetWeather",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.metaweather.com/api/location/44544",
+					"protocol": "https",
+					"host": [
+						"www",
+						"metaweather",
+						"com"
+					],
+					"path": [
+						"api",
+						"location",
+						"44544"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDayWeather",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.metaweather.com/api/location/44544/2020/8/13/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"metaweather",
+						"com"
+					],
+					"path": [
+						"api",
+						"location",
+						"44544",
+						"2020",
+						"8",
+						"13",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

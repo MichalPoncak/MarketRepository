@@ -1,0 +1,7 @@
+Q1. Roughly, how many users will be using this application?
+Q2. Is there a possibility that uploaded data in a database will be accessed and used by other applications?
+Q3. Are uploading and data viewing features meant to be used by the same user?
+Q4. Do we need to recognize different users or can these features be publicly accessible by anyone?
+Q5. Can these features be accessed from a computer and other portable devices?
+Q6. How often will data uploading happen?
+Q7. When another file is uploaded do we remove all existing data?

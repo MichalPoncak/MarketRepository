@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "9bba27aa-52b0-4e80-93ab-d6f379051d94",
+		"name": "MarketAPI",
+		"description": "MarketAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Price Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:54667/market/price",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54667",
+					"path": [
+						"market",
+						"price"
+					]
+				},
+				"description": "Get a list of prices."
+			},
+			"response": []
+		},
+		{
+			"name": "Price Bulk Insert",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "CreatedBy",
+						"value": "Michal",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n\t{\r\n\t\t\"Date\": \"21/03/2017 15:30\",\r\n\t\t\"MarketPrice\": 66.98999786\r\n\t},\r\n\t{\r\n\t\t\"Date\": \"12/12/2020 15:30\",\r\n\t\t\"MarketPrice\": 99.98999789\r\n\t},\r\n\t{\r\n\t\t\"Date\": \"30/10/2010 15:30\",\r\n\t\t\"MarketPrice\": 999999999.98999700\r\n\t}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:54667/market/price",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54667",
+					"path": [
+						"market",
+						"price"
+					]
+				},
+				"description": "Inserts a list of prices."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
