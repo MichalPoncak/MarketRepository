@@ -1,0 +1,14 @@
+﻿
+<div class="text-center">
+    <div class="container">
+        <span class="input-group-addon">Location WOEID:</span>
+        <input type="text" id="txtLocation" value="44544" />
+    </div>
+
+    <button id="btnGetWeather" type="button" class="btn btn-primary btn-lg btn-block mt-lg-2 mb-lg-2 mt-sm-4 mb-sm-4" data-url='@Url.Action("GetWeather", "Home")'>Get 5 day forecast</button>
+
+    <span id="statusMessage" class="textOutput"></span>
+    <div id="weatherOutputGrid" class="table-responsive"></div>
+</div>
+
+<script type="text/javascript" src="~/js/Weather.js"></script>
