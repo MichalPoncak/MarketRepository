@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geodesics.Api", "Geodesics.Api\Geodesics.Api.csproj", "{9E7D194E-0286-4E8F-AD8B-6085206DDC36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C494F83F-7E97-4A2C-BBFB-A673CF89B5CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geodesics.UnitTests", "Geodesics.UnitTests\Geodesics.UnitTests.csproj", "{82F83F2A-48CE-491E-B213-961A2D2CBB1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIGateway", "APIGateway\APIGateway.csproj", "{2FD9818D-3281-4B69-AA40-F508B516D8B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E7D194E-0286-4E8F-AD8B-6085206DDC36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E7D194E-0286-4E8F-AD8B-6085206DDC36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E7D194E-0286-4E8F-AD8B-6085206DDC36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E7D194E-0286-4E8F-AD8B-6085206DDC36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82F83F2A-48CE-491E-B213-961A2D2CBB1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82F83F2A-48CE-491E-B213-961A2D2CBB1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82F83F2A-48CE-491E-B213-961A2D2CBB1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82F83F2A-48CE-491E-B213-961A2D2CBB1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FD9818D-3281-4B69-AA40-F508B516D8B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD9818D-3281-4B69-AA40-F508B516D8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD9818D-3281-4B69-AA40-F508B516D8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD9818D-3281-4B69-AA40-F508B516D8B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{82F83F2A-48CE-491E-B213-961A2D2CBB1F} = {C494F83F-7E97-4A2C-BBFB-A673CF89B5CF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E0ED578-437E-493A-BF9A-D5BADF936A09}
+	EndGlobalSection
+EndGlobal

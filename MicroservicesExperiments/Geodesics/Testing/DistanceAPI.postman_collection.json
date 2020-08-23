@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "e2a716cb-ed2b-435c-b93d-67e7024557d6",
+		"name": "DistanceAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetGeodesicCurve",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44320/api/distance/GeodesicCurve/Mile?point1Latitude=53.297975&point1Longitude=-6.372663&point2Latitude=41.385101&point2Longitude=-81.440440",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44320",
+					"path": [
+						"api",
+						"distance",
+						"GeodesicCurve",
+						"Mile"
+					],
+					"query": [
+						{
+							"key": "point1Latitude",
+							"value": "53.297975"
+						},
+						{
+							"key": "point1Longitude",
+							"value": "-6.372663"
+						},
+						{
+							"key": "point2Latitude",
+							"value": "41.385101"
+						},
+						{
+							"key": "point2Longitude",
+							"value": "-81.440440"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPythagoras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44320/api/distance/Pythagoras/Km?point1Latitude=53.297975&point1Longitude=-6.372663&point2Latitude=41.385101&point2Longitude=-81.440440",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44320",
+					"path": [
+						"api",
+						"distance",
+						"Pythagoras",
+						"Km"
+					],
+					"query": [
+						{
+							"key": "point1Latitude",
+							"value": "53.297975"
+						},
+						{
+							"key": "point1Longitude",
+							"value": "-6.372663"
+						},
+						{
+							"key": "point2Latitude",
+							"value": "41.385101"
+						},
+						{
+							"key": "point2Longitude",
+							"value": "-81.440440"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPythagorasError",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44320/api/distance/Pythagoras/Km?point1Latitude=100&point1Longitude=2&point2Latitude=3&point2Longitude=4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44320",
+					"path": [
+						"api",
+						"distance",
+						"Pythagoras",
+						"Km"
+					],
+					"query": [
+						{
+							"key": "point1Latitude",
+							"value": "100"
+						},
+						{
+							"key": "point1Longitude",
+							"value": "2"
+						},
+						{
+							"key": "point2Latitude",
+							"value": "3"
+						},
+						{
+							"key": "point2Longitude",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "APIGatewayGetGeodesicCurve",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44350/distance/GeodesicCurve/Km?point1Latitude=53.297975&point1Longitude=-6.372663&point2Latitude=41.385101&point2Longitude=-81.440440",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44350",
+					"path": [
+						"distance",
+						"GeodesicCurve",
+						"Km"
+					],
+					"query": [
+						{
+							"key": "point1Latitude",
+							"value": "53.297975"
+						},
+						{
+							"key": "point1Longitude",
+							"value": "-6.372663"
+						},
+						{
+							"key": "point2Latitude",
+							"value": "41.385101"
+						},
+						{
+							"key": "point2Longitude",
+							"value": "-81.440440"
+						}
+					]
+				},
+				"description": "Sample request targeting Ocelot API gateway."
+			},
+			"response": []
+		},
+		{
+			"name": "APIGatewayGetPythagoras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44350/distance/Pythagoras/Km?point1Latitude=53.297975&point1Longitude=-6.372663&point2Latitude=41.385101&point2Longitude=-81.440440",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44350",
+					"path": [
+						"distance",
+						"Pythagoras",
+						"Km"
+					],
+					"query": [
+						{
+							"key": "point1Latitude",
+							"value": "53.297975"
+						},
+						{
+							"key": "point1Longitude",
+							"value": "-6.372663"
+						},
+						{
+							"key": "point2Latitude",
+							"value": "41.385101"
+						},
+						{
+							"key": "point2Longitude",
+							"value": "-81.440440"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
