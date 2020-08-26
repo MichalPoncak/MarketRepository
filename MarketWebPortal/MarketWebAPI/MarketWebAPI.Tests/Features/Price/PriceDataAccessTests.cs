@@ -87,10 +87,10 @@ namespace MarketWebAPI.Tests.Features.Price
             };
 
             // Act
-            priceDataAccess.InsertPrices(createdBy, createdBy, priceInput);
+            priceDataAccess.InsertPricesAsync(createdBy, createdBy, priceInput);
 
             // Assert
-            dataAccessHelper.Verify(x => x.ExecuteNonQuery(
+            dataAccessHelper.Verify(x => x.ExecuteNonQueryAsync(
                 It.Is<string>(y => y == "spPriceBulkInsert"),
                 It.Is<List<DbParameter>>(y => y.Count == 4 && (string)y[0].Value == createdBy),
                 It.IsAny<CommandType>()));

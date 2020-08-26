@@ -66,7 +66,7 @@ namespace MarketWebAPI.Tests.Features.Price
             controller.InsertPrice(priceInput);
 
             // Assert
-            mockService.Verify(x => x.InsertPrices(
+            mockService.Verify(x => x.InsertPricesAsync(
                 It.Is<string>(y => y == createdBy),
                 It.Is<Collection<PriceInput>>(y =>
                     y.First().Date == new DateTime(2020, 1, 1) &&

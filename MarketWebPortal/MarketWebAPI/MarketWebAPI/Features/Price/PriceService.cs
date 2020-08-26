@@ -9,7 +9,7 @@ namespace MarketWebAPI.Features.Price
     public interface IPriceService
     {
         Task<List<PriceOutput>> GetPricesAsync();
-        int InsertPrices(string createdBy, Collection<PriceInput> prices);
+        Task<int> InsertPricesAsync(string createdBy, Collection<PriceInput> prices);
     }
 
     public class PriceService : IPriceService
@@ -44,7 +44,7 @@ namespace MarketWebAPI.Features.Price
             return prices;
         }
 
-        public int InsertPrices(string createdBy, Collection<PriceInput> prices)
+        public async Task<int> InsertPricesAsync(string createdBy, Collection<PriceInput> prices)
         {
             var marketPrices = new Collection<PriceInputDto>(prices.Select(a => new PriceInputDto
             {
@@ -54,7 +54,7 @@ namespace MarketWebAPI.Features.Price
                 UpdatedBy = createdBy
             }).ToList());
 
-            return priceDataAccess.InsertPrices(
+            return await priceDataAccess.InsertPricesAsync(
                 createdBy,
                 createdBy,
                 marketPrices);

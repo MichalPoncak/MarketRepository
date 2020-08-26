@@ -113,10 +113,10 @@ namespace MarketWebAPI.Tests.Features.Price
             };
 
             // Act
-            var result = service.InsertPrices(createdBy, priceInput);
+            var result = service.InsertPricesAsync(createdBy, priceInput);
 
             // Assert
-            mockDataAccess.Verify(x => x.InsertPrices(
+            mockDataAccess.Verify(x => x.InsertPricesAsync(
                 It.Is<string>(y => y == createdBy),
                 It.Is<string>(y => y == createdBy),
                 It.Is<Collection<PriceInputDto>>(y =>
@@ -136,15 +136,15 @@ namespace MarketWebAPI.Tests.Features.Price
             };
 
             var mockDataAccess = new Mock<IPriceDataAccess>();
-            mockDataAccess.Setup(x => x.InsertPrices(
+            mockDataAccess.Setup(x => x.InsertPricesAsync(
                 It.IsAny<string>(),
                 It.IsAny<string>(),
                 It.IsAny<Collection<PriceInputDto>>()))
-                .Returns(insertedId);
+                .ReturnsAsync(insertedId);
             var service = new PriceService(mockDataAccess.Object);
 
             // Act
-            var result = service.InsertPrices(createdBy, priceInput);
+            var result = service.InsertPricesAsync(createdBy, priceInput).Result;
 
             // Assert
             Assert.Equal(insertedId, result);

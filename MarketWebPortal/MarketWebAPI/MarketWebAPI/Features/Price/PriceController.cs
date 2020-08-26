@@ -43,9 +43,9 @@ namespace MarketWebAPI.Features.Price
         /// <returns>InsertedID</returns>
         [ProducesResponseType(201)]
         [HttpPost]
-        public IActionResult InsertPrice([FromBody]Collection<PriceInput> body)
+        public async Task<IActionResult> InsertPrice([FromBody]Collection<PriceInput> body)
         {
-            int insertedID = priceService.InsertPrices(
+            int insertedID = await priceService.InsertPricesAsync(
                 Request.Headers.CreatedByHeader(),
                 body);
 

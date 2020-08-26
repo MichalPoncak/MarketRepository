@@ -12,7 +12,7 @@ namespace MarketWebAPI.Features.Price
     public interface IPriceDataAccess
     {
         Task<List<PriceOutputDto>> GetPricesAsync();
-        public int InsertPrices(
+        Task<int> InsertPricesAsync(
             string CreatedBy,
             string UpdatedBy,
             Collection<PriceInputDto> prices);
@@ -45,7 +45,7 @@ namespace MarketWebAPI.Features.Price
             return prices;
         }
 
-        public int InsertPrices(
+        public async Task<int> InsertPricesAsync(
             string CreatedBy,
             string UpdatedBy,
             Collection<PriceInputDto> prices)
@@ -58,7 +58,7 @@ namespace MarketWebAPI.Features.Price
             var insertedIdParam = parameterHelper.GetParameter("InsertedID", SqlDbType.Int, ParameterDirection.Output);
             parameterList.Add(insertedIdParam);
 
-            dataAccess.ExecuteNonQuery("spPriceBulkInsert", parameterList, CommandType.StoredProcedure);
+            await dataAccess.ExecuteNonQueryAsync("spPriceBulkInsert", parameterList, CommandType.StoredProcedure);
 
             return (int)insertedIdParam.Value;
         }
