@@ -11,7 +11,7 @@ namespace MarketWebAPI.Features.Price
 {
     public interface IPriceDataAccess
     {
-        List<PriceOutputDto> GetPrices();
+        Task<List<PriceOutputDto>> GetPricesAsync();
         public int InsertPrices(
             string CreatedBy,
             string UpdatedBy,
@@ -29,11 +29,11 @@ namespace MarketWebAPI.Features.Price
             parameterHelper = new SqlParameterHelper();
         }
 
-        public List<PriceOutputDto> GetPrices()
+        public async Task<List<PriceOutputDto>> GetPricesAsync()
         {
             var parameterList = new List<DbParameter>(); // no params needed
 
-            IDataReader dataReader = dataAccess.GetDataReader("spPriceGet", parameterList, CommandType.StoredProcedure);
+            IDataReader dataReader = await dataAccess.GetDataReaderAsync("spPriceGet", parameterList, CommandType.StoredProcedure);
 
             List<PriceOutputDto> prices;
 

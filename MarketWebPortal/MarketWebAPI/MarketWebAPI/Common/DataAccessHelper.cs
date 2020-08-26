@@ -13,7 +13,7 @@ namespace MarketWebAPI.Common
     {
         DbCommand GetCommand(DbConnection connection, string commandText, CommandType commandType);
         int ExecuteNonQuery(string procedureName, List<DbParameter> parameters, CommandType commandType = CommandType.StoredProcedure);
-        IDataReader GetDataReader(string procedureName, List<DbParameter> parameters, CommandType commandType = CommandType.StoredProcedure);
+        Task<IDataReader> GetDataReaderAsync(string procedureName, List<DbParameter> parameters, CommandType commandType = CommandType.StoredProcedure);
     }
 
     public class DataAccessHelper : IDataAccessHelper
@@ -73,7 +73,7 @@ namespace MarketWebAPI.Common
             }
         }
 
-        public IDataReader GetDataReader(string procedureName, List<DbParameter> parameters, CommandType commandType = CommandType.StoredProcedure)
+        public async Task<IDataReader> GetDataReaderAsync(string procedureName, List<DbParameter> parameters, CommandType commandType = CommandType.StoredProcedure)
         {
             DbDataReader dr;
 
@@ -86,7 +86,7 @@ namespace MarketWebAPI.Common
                     cmd.Parameters.AddRange(parameters.ToArray());
                 }
 
-                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dr = await cmd.ExecuteReaderAsync(CommandBehavior.CloseConnection);
             }
 
             return dr;

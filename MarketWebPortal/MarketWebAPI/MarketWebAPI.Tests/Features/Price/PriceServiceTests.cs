@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace MarketWebAPI.Tests.Features.Price
@@ -19,10 +20,10 @@ namespace MarketWebAPI.Tests.Features.Price
             var service = new PriceService(mockDataAccess.Object);
 
             // Act
-            service.GetPrices();
+            service.GetPricesAsync();
 
             // Assert
-            mockDataAccess.Verify(x => x.GetPrices());
+            mockDataAccess.Verify(x => x.GetPricesAsync());
         }
 
         [Fact]
@@ -54,12 +55,12 @@ namespace MarketWebAPI.Tests.Features.Price
                 }
             };
 
-            mockDataAccess.Setup(x => x.GetPrices()).Returns(pricesOutput);
+            mockDataAccess.Setup(x => x.GetPricesAsync()).ReturnsAsync(pricesOutput);
 
             var service = new PriceService(mockDataAccess.Object);
 
             // Act
-            var result = service.GetPrices();
+            var result = service.GetPricesAsync().Result;
 
             // Assert
             Assert.Equal(2, result.Count);
@@ -85,13 +86,14 @@ namespace MarketWebAPI.Tests.Features.Price
         {
             // Arrange
             var mockDataAccess = new Mock<IPriceDataAccess>();
-            mockDataAccess.Setup(x => x.GetPrices())
-                .Returns((List<PriceOutputDto>)null);
+
+            mockDataAccess.Setup(x => x.GetPricesAsync())
+                .ReturnsAsync((List<PriceOutputDto>)null);
 
             var service = new PriceService(mockDataAccess.Object);
 
             // Act
-            var result = service.GetPrices();
+            var result = service.GetPricesAsync().Result;
 
             // Assert
             Assert.Empty(result);

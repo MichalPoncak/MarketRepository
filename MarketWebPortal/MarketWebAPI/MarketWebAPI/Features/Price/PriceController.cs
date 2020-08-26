@@ -30,9 +30,9 @@ namespace MarketWebAPI.Features.Price
         /// <returns>PriceOutput object</returns>
         [ProducesResponseType(typeof(IEnumerable<PriceOutput>), 200)]
         [HttpGet]
-        public IActionResult GetPrices()
+        public async Task<IActionResult> GetPrices()
         {
-            var prices = priceService.GetPrices();
+            List<PriceOutput> prices = await priceService.GetPricesAsync();
 
             return Ok(prices);
         }

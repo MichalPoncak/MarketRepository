@@ -32,12 +32,12 @@ namespace MarketWebAPI.Tests.Features.Price
                 }
             };
 
-            mockService.Setup(x => x.GetPrices()).Returns(priceDummyOutput);
+            mockService.Setup(x => x.GetPricesAsync()).ReturnsAsync(priceDummyOutput);
 
             var controller = new PriceController(mockService.Object);
 
             // Act
-            var output = controller.GetPrices();
+            var output = controller.GetPrices().Result;
 
             // Assert
             var okResult = output as OkObjectResult;

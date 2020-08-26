@@ -44,15 +44,15 @@ namespace MarketWebAPI.Tests.Features.Price
             };
 
             var mockReader = new MockDataReader(pricesDummyDBResultSet);
-            dataAccessHelper.Setup(x => x.GetDataReader(
+            dataAccessHelper.Setup(x => x.GetDataReaderAsync(
                 It.IsAny<string>(),
                 It.IsAny<List<DbParameter>>(),
-                It.IsAny<CommandType>())).Returns(mockReader);
+                It.IsAny<CommandType>())).ReturnsAsync(mockReader);
 
             var priceDataAccess = new PriceDataAccess(dataAccessHelper.Object);
 
             // Act
-            var result = priceDataAccess.GetPrices();
+            var result = priceDataAccess.GetPricesAsync().Result;
 
             // Assert
             Assert.Equal(pricesDummyDBResultSet.Count, result.Count);

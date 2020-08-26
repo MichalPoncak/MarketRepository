@@ -8,8 +8,8 @@ namespace MarketWebAPI.Features.Price
 {
     public interface IPriceService
     {
-        List<PriceOutput> GetPrices();
-        public int InsertPrices(string createdBy, Collection<PriceInput> prices);
+        Task<List<PriceOutput>> GetPricesAsync();
+        int InsertPrices(string createdBy, Collection<PriceInput> prices);
     }
 
     public class PriceService : IPriceService
@@ -21,10 +21,10 @@ namespace MarketWebAPI.Features.Price
             this.priceDataAccess = priceDataAccess;
         }
 
-        public List<PriceOutput> GetPrices()
+        public async Task<List<PriceOutput>> GetPricesAsync()
         {
             var prices = new List<PriceOutput>();
-            List<PriceOutputDto> pricesDal = priceDataAccess.GetPrices();
+            List<PriceOutputDto> pricesDal = await priceDataAccess.GetPricesAsync();
 
             if (pricesDal != null && pricesDal.Count > 0)
             {
