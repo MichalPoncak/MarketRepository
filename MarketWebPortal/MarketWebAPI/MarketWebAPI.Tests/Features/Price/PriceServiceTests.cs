@@ -106,7 +106,7 @@ namespace MarketWebAPI.Tests.Features.Price
             string createdBy = "Michal";
             var priceInput = new Collection<PriceInput>()
             {
-                new PriceInput { Date = DateTime.Now, MarketPrice = 66.98999786m },
+                new PriceInput { Date = new DateTime(2020, 1, 1), MarketPrice = 66.98999786m },
                 new PriceInput { Date = DateTime.MaxValue, MarketPrice = 99.98999789m }
             };
 
@@ -118,7 +118,7 @@ namespace MarketWebAPI.Tests.Features.Price
                 It.Is<string>(y => y == createdBy),
                 It.Is<string>(y => y == createdBy),
                 It.Is<Collection<PriceInputDto>>(y =>
-                    y.First().PriceDate == DateTime.Now &&
+                    y.First().PriceDate == new DateTime(2020, 1, 1) &&
                     y.First().MarketPrice == 66.98999786m)));
         }
 
